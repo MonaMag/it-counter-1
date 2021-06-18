@@ -1,0 +1,61 @@
+.App {
+    text-align: center;
+}
+
+.wrapper {
+    border: 5px solid #61dafb;
+    border-radius: 10px;
+    height: 40vmin;
+    width: 40vmin;
+    padding: 20px;
+}
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.scoreboard {
+    background-color: #61dafb;
+    border-radius: 10px;
+    padding: 10px;
+    height: 25vmin;
+    margin-bottom: 15px;
+}
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #61dafb;
+    border-radius: 10px;
+    padding: 10px;
+    height: 9vmin;
+}
+
+.inc {
+    background-color: #61dafb;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin: 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: calc(12px + 2vmin);
+    width: 150px;
+}
+
+.reset {
+    background-color: #61dafb;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin: 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: calc(12px + 2vmin);
+    width: 170px;
+}
+
