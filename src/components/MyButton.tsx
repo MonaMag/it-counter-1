@@ -6,7 +6,7 @@ type ButtonType = {
     value: number
     maxValue: number
     title: string
-    changeCounterValue: () => void
+    changeCounterValue?: () => void
     disabledBtn?: boolean
 }
 

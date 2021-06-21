@@ -1,0 +1,24 @@
+
+.inputWrapper {
+    display: flex;
+    margin: 40px 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    text-align: center;
+    border: 2px solid cornflowerblue;
+    height: 30px;
+    border-radius: 8px;
+}
+.input:focus {
+    box-shadow: 0 0 5px #61dafb;
+}
+
+span {
+    color: black;
+    font-size: 24px;
+    margin-right: 40px;
+    font-weight: 700;
+}
