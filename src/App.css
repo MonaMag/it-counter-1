@@ -1,15 +1,9 @@
+
 .App {
     text-align: center;
 }
 
-.wrapper {
-    border: 5px solid #61dafb;
-    border-radius: 10px;
-    height: 30vmin;
-    width: 40vmin;
-    padding: 20px;
-}
-.App-header {
+.App-wrapper {
     background-color: #282c34;
     min-height: 100vh;
     display: flex;
@@ -20,53 +14,12 @@
     color: white;
 }
 
-.scoreboard {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #61dafb;
-    border-radius: 10px;
-    padding: 10px;
-    height: 15vmin;
-    margin-bottom: 15px;
-    font-size: 100px;
 
-}
-.counter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid #61dafb;
-    border-radius: 10px;
-    padding: 10px;
-    height: 8vmin;
-}
 
-.inc {
-    background-color: #61dafb;
-    border-radius: 15px;
-    padding: 10px 15px;
-    margin: 20px;
-    color: #000000;
-    font-weight: bold;
-    font-size: calc(12px + 2vmin);
-    width: 150px;
-}
 
-.reset {
-    background-color: #61dafb;
-    border-radius: 15px;
-    padding: 10px 15px;
-    margin: 20px;
-    color: #000000;
-    font-weight: bold;
-    font-size: calc(12px + 2vmin);
-    width: 170px;
-}
 
-.red {
-    color: red;
-}
-.black {
-    color: black;
-}
+
+
+
+
+

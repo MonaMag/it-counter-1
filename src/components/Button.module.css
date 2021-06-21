@@ -1,0 +1,22 @@
+.btn {
+    background-color: #61dafb;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin: 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: calc(12px + 2vmin);
+    width: 150px;
+}
+
+.disabled {
+    background-color: #61dafb;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin: 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: calc(12px + 2vmin);
+    width: 150px;
+    opacity: 0.6;
+}

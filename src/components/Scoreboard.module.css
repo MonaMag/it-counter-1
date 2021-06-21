@@ -1,0 +1,21 @@
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #61dafb;
+    border-radius: 10px;
+    padding: 10px;
+    height: 200px;
+    width: 400px;
+    margin-bottom: 15px;
+
+}
+.value {
+    font-size: 200px;
+    color: black;
+ }
+
+.endValue {
+    color: red;
+}
+
