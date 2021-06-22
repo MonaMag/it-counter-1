@@ -5,24 +5,29 @@ import SettingsInput from "./SettingsInput";
 
 
 type SettingsScreenType = {
-    value: number
     maxValue: number
     startValue: number
+    ChangeMaxValue: (newMaxValue: number) => void
+    ChangeStartValue: (newStartValue: number) => void
 }
 
 
 function SettingsScreen(props: SettingsScreenType) {
+
     return (
         <div className={s.setScreen }>
-            <SettingsInput value={props.value}
+            <SettingsInput
                            maxValue={props.maxValue}
                            startValue={props.startValue}
                            inputName={'max value:'}
+                           changeInputValue={props.ChangeMaxValue}
             />
-            <SettingsInput value={props.value}
+            <SettingsInput
                            maxValue={props.maxValue}
                            startValue={props.startValue}
-                           inputName={'start value:'}/>
+                           inputName={'start value:'}
+                           changeInputValue={props.ChangeStartValue}
+            />
         </div>
     )
 }

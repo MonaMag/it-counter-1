@@ -8,6 +8,7 @@
     height: 200px;
     width: 400px;
     margin-bottom: 15px;
+    color: black;
 
 }
 .value {
@@ -19,3 +20,7 @@
     color: red;
 }
 
+.settingsMessage {
+    font-size: 100px;
+    text-align: center;
+}

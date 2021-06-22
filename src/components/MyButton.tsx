@@ -3,11 +3,10 @@ import '../App.css';
 import s from './Button.module.css'
 
 type ButtonType = {
-    value: number
-    maxValue: number
     title: string
-    changeCounterValue?: () => void
+    changeValue: () => void
     disabledBtn?: boolean
+
 }
 
 function MyButton(props: ButtonType) {
@@ -18,7 +17,7 @@ function MyButton(props: ButtonType) {
             <button
                 className={props.disabledBtn ? s.disabled : s.btn}
                 disabled={props.disabledBtn}
-                onClick={props.changeCounterValue}>{props.title}
+                onClick={props.changeValue}>{props.title}
             </button>
         </div>
     )

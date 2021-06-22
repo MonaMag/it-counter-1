@@ -5,12 +5,15 @@ import s from './Scoreboard.module.css'
 type ScoreboardType = {
     value: number
     maxValue: number
+    startValue: number
+    settingValidValue: boolean
 }
 
 
 function Scoreboard(props: ScoreboardType) {
     let style =`${s.value} ${props.value === props.maxValue ? s.endValue : ''}`
     return (
+
         <div className={s.scoreboard}>
             <div className={style}>{props.value}</div>
         </div>

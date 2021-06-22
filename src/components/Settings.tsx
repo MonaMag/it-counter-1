@@ -1,33 +1,35 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import '../App.css';
 import MyButton from "./MyButton";
 import s from './Counter.module.css'
 import SettingsScreen from "./SettingsScreen";
 
 type SettingsPropsType = {
-    value: number
     maxValue: number
     startValue: number
-
+    settingValidValue: boolean
+    ChangeMaxValue: (newMaxValue: number) => void
+    ChangeStartValue: (newStartValue: number) => void
+    onClickSetButton: () => void
 }
 
 function Settings(props: SettingsPropsType) {
 
 
-    let disabledSet = props.value === props.maxValue
-
+    let disabledSet = !props.settingValidValue ||props.startValue >= props.maxValue || props.startValue < 0;
 
     return (
         <div className={s.counter}>
-            <SettingsScreen value={props.value}
-                            maxValue={props.maxValue}
+            <SettingsScreen maxValue={props.maxValue}
                             startValue={props.startValue}
+                            ChangeMaxValue={props.ChangeMaxValue}
+                            ChangeStartValue={props.ChangeStartValue}
             />
             <div className={s.btnWrapper}>
-                <MyButton value={props.value}
-                          title='set'
-                          maxValue={props.maxValue}
+                <MyButton title='set'
                           disabledBtn={disabledSet}
+                          changeValue={props.onClickSetButton}
+
 
                 />
             </div>
