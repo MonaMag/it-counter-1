@@ -3,6 +3,7 @@ import '../App.css';
 import s from './SettingsInput.module.css'
 
 type SettingsPropsType = {
+    error: string
     maxValue: number
     startValue: number
     inputName: string
@@ -13,19 +14,17 @@ type SettingsPropsType = {
 
 function SettingsInput(props: SettingsPropsType) {
 
+    /*const error = props.startValue >= props.maxValue || props.startValue < 0;*/
 
-    const error = props.startValue >= props.maxValue || props.startValue < 0;
-
-    const onChangeMaxValue = (e: ChangeEvent<HTMLInputElement>) => {
+    const onChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
         props.changeInputValue(+e.currentTarget.value);
     }
-
     return (
         <div className={s.inputWrapper}>
             <div><span>{props.inputName}</span></div>
-            <input className={error ? s.error : s.input}
+            <input className={props.error ? s.error : s.input}
                    type="number"
-                   onChange={onChangeMaxValue}
+                   onChange={onChangeValue}
             />
         </div>
     )

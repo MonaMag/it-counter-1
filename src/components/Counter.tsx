@@ -1,14 +1,14 @@
 import React from 'react';
 import '../App.css';
-import Scoreboard from "./Scoreboard";
+import Display from "./Display";
 import MyButton from "./MyButton";
 import s from './Counter.module.css'
 
 type CounterPropsType = {
     value: number
+    error: string
     maxValue: number
     startValue: number
-    settingValidValue: boolean
     incHandler: () => void
     resetHandler: () => void
 }
@@ -16,16 +16,14 @@ type CounterPropsType = {
 
 function Counter(props: CounterPropsType) {
 
-
-    let disabledBtn =  !props.settingValidValue || props.value === props.maxValue
-   /* let disabledReset = props.settingValidValue || props.value === props.startValue;*/
+    let disabledBtn =  !!props.error
+   /* let disabledReset = !!props.error*/
 
     return (
         <div className={s.counter}>
-            <Scoreboard value={props.value}
-                        maxValue={props.maxValue}
-                        startValue={props.startValue}
-                        settingValidValue={props.settingValidValue}/>
+            <Display value={props.value}
+                     error={props.error}
+                        />
 
 
             <div className={s.btnWrapper}>
@@ -35,7 +33,7 @@ function Counter(props: CounterPropsType) {
                 />
                 <MyButton title='reset'
                           changeValue={props.resetHandler}
-                          disabledBtn={props.settingValidValue}
+                         /* disabledBtn={disabledReset}*/
                 />
             </div>
         </div>

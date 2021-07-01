@@ -11,7 +11,6 @@ type ButtonType = {
 
 function MyButton(props: ButtonType) {
 
-
     return (
         <div >
             <button
