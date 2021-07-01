@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import '../App.css';
 import MyButton from "./MyButton";
 import s from './Counter.module.css'
@@ -8,6 +8,7 @@ type SettingsPropsType = {
     maxValue: number
     startValue: number
     error: string
+    validValue: boolean
     ChangeMaxValue: (newMaxValue: number) => void
     ChangeStartValue: (newStartValue: number) => void
     onClickSetButton: () => void
@@ -16,7 +17,8 @@ type SettingsPropsType = {
 function Settings(props: SettingsPropsType) {
 
 
-    let disabledSet = !!props.error /*|| props.startValue >= props.maxValue || props.startValue < 0;*/
+    let disabledSet = !!props.error || !props.validValue
+    /*|| props.startValue >= props.maxValue || props.startValue < 0;*/
 
     return (
         <div className={s.counter}>

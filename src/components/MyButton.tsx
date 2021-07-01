@@ -12,7 +12,7 @@ type ButtonType = {
 function MyButton(props: ButtonType) {
 
     return (
-        <div >
+        <div>
             <button
                 className={props.disabledBtn ? s.disabled : s.btn}
                 disabled={props.disabledBtn}

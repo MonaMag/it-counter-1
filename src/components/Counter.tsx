@@ -9,6 +9,7 @@ type CounterPropsType = {
     error: string
     maxValue: number
     startValue: number
+    validValue: boolean
     incHandler: () => void
     resetHandler: () => void
 }
@@ -16,14 +17,15 @@ type CounterPropsType = {
 
 function Counter(props: CounterPropsType) {
 
-    let disabledBtn =  !!props.error
-   /* let disabledReset = !!props.error*/
+    let disabledBtn = !!props.error || props.validValue
+    /* let disabledReset = !!props.error*/
 
     return (
         <div className={s.counter}>
             <Display value={props.value}
                      error={props.error}
-                        />
+                     validValue={props.validValue}
+            />
 
 
             <div className={s.btnWrapper}>
@@ -33,7 +35,8 @@ function Counter(props: CounterPropsType) {
                 />
                 <MyButton title='reset'
                           changeValue={props.resetHandler}
-                         /* disabledBtn={disabledReset}*/
+                          disabledBtn={props.validValue}
+
                 />
             </div>
         </div>
