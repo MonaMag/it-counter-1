@@ -1,18 +1,43 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Counter from "./components/Counter";
 import Settings from "./components/Settings";
 
 
 function App() {
+
+
+
+
+
+
     const [startValue, setStartValue] = useState<number>(0);
     const [maxValue, setMaxValue] = useState<number>(5);
     const [value, setValue] = useState<number>(startValue);
     /*const [error, setError] = useState('');*/
-    const [validValue, setValidValue] = useState(false);
+    const [validValues, setValidValues] = useState(false);
+
+
+    useEffect(()=> {
+
+        let startValueString = localStorage.getItem("startValue");
+        let maxValueString = localStorage.getItem("maxValue");
+        if(startValueString) {
+            let newStartValue = JSON.parse(startValueString);
+            setStartValue(newStartValue);
+            setValue(newStartValue);
+
+        }
+        if(maxValueString) {
+            let newMaxValue = JSON.parse(maxValueString);
+            setMaxValue(newMaxValue);
+        }
+
+    }, [])
+
 
     const incHandler = () => setValue(value + 1);
-    const resetHandler = () => setValue(0);
+    const resetHandler = () => setValue(startValue);
 
     const isError = () => {
         let error = '';
@@ -23,26 +48,29 @@ function App() {
     }
 
     const ChangeMaxValue = (newMaxValue: number) => {
-        setValidValue(true);
+        setValidValues(true);
         setValue(0);
         setMaxValue(newMaxValue);
 
     }
     const ChangeStartValue = (newStartValue: number) => {
-        setValidValue(true);
+        setValidValues(true);
         setStartValue(newStartValue);
         /*let error = isError();
         setError(error);*/
     }
 
     const onClickSetButton = () => {
-        setValidValue(false);
+   /*     localStorage.setItem('valuesOfSettings', JSON.stringify({startValue: startValue, maxValue: maxValue}));*/
+        localStorage.setItem("startValue", JSON.stringify(startValue))
+        localStorage.setItem("maxValue", JSON.stringify(maxValue));
+        setValidValues(false);
         if (!error) {
             setValue(startValue)
         }
     }
-    let error = isError()
 
+    let error = isError();
 
     return (
         <div className="App">
@@ -50,7 +78,7 @@ function App() {
                 <Settings maxValue={maxValue}
                           startValue={startValue}
                           error={error}
-                          validValue={validValue}
+                          validValues={validValues}
                           ChangeMaxValue={ChangeMaxValue}
                           ChangeStartValue={ChangeStartValue}
                           onClickSetButton={onClickSetButton}
@@ -60,7 +88,7 @@ function App() {
                          error={!error && value >= maxValue ? '_MAX' : error ? error : ''}
                          maxValue={maxValue}
                          startValue={startValue}
-                         validValue={validValue}
+                         validValues={validValues}
                          incHandler={incHandler}
                          resetHandler={resetHandler}
                 />
@@ -72,3 +100,10 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+

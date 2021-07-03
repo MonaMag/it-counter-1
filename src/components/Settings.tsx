@@ -8,7 +8,7 @@ type SettingsPropsType = {
     maxValue: number
     startValue: number
     error: string
-    validValue: boolean
+    validValues: boolean
     ChangeMaxValue: (newMaxValue: number) => void
     ChangeStartValue: (newStartValue: number) => void
     onClickSetButton: () => void
@@ -17,7 +17,7 @@ type SettingsPropsType = {
 function Settings(props: SettingsPropsType) {
 
 
-    let disabledSet = !!props.error || !props.validValue
+    let disabledSet = !!props.error || !props.validValues
     /*|| props.startValue >= props.maxValue || props.startValue < 0;*/
 
     return (

@@ -4,8 +4,7 @@ import s from './SettingsInput.module.css'
 
 type SettingsPropsType = {
     error: string
-    maxValue: number
-    startValue: number
+    value: number
     inputName: string
     changeInputValue: (value: number) => void
 
@@ -25,6 +24,8 @@ function SettingsInput(props: SettingsPropsType) {
             <input className={props.error ? s.error : s.input}
                    type="number"
                    onChange={onChangeValue}
+                   value={props.value}
+
             />
         </div>
     )

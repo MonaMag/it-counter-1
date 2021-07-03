@@ -18,15 +18,14 @@ function SettingsScreen(props: SettingsScreenType) {
     return (
         <div className={s.setScreen }>
             <SettingsInput
-                           maxValue={props.maxValue}
-                           startValue={props.startValue}
+                           value={props.maxValue}
                            inputName={'max value:'}
                            error={props.error}
                            changeInputValue={props.ChangeMaxValue}
             />
             <SettingsInput
-                           maxValue={props.maxValue}
-                           startValue={props.startValue}
+
+                           value={props.startValue}
                            inputName={'start value:'}
                            error={props.error}
                            changeInputValue={props.ChangeStartValue}
