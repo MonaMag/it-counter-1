@@ -3,23 +3,33 @@ import '../App.css';
 import s from './Display.module.css'
 
 type DisplayType = {
-    value: number
-    error?: string
-    validValues: boolean
+    counterValue: number
+    startValue: number
+    maxValue: number
+    settingsUpdating: boolean
+    //error?: string
+    //validValues: boolean
 }
 
 
 function Display(props: DisplayType) {
-    let style = `${s.value} ${props.error ? s.endValue : ''}`
+
     return (
-        <div className={s.scoreboard}>
-            {props.validValues && !props.error ? <div>enter values</div> :
-                <div className={style}>{props.error && props.error !== '_MAX' ? props.error : props.value}</div>}
+        <div className={`${s.scoreboard} ${s.value} ${props.counterValue === props.maxValue ? 'maxWarning' : ''}`}>
+            {
+                props.startValue >= props.maxValue || props.startValue < 0
+                    ?
+                    <div className={!props.settingsUpdating ? `${s.error}`: ''}>
+                        {!props.settingsUpdating ? 'incorrect value!' : props.counterValue}
+                    </div>
+                    :
+                    <div className={!props.settingsUpdating ? `${s.settingsMessage }` : ''}>
+                        {!props.settingsUpdating ? `enter values and press "set"` : props.counterValue}
+                    </div>
+            }
         </div>
     )
 }
 
 export default Display;
-
-
 

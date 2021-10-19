@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import '../App.css';
 import s from './SettingsScreen.module.css'
 import SettingsInput from "./SettingsInput";
@@ -7,28 +7,31 @@ import SettingsInput from "./SettingsInput";
 type SettingsScreenType = {
     maxValue: number
     startValue: number
-    error: string
-    ChangeMaxValue: (newMaxValue: number) => void
-    ChangeStartValue: (newStartValue: number) => void
+    onChangeMaxValue: (newMaxValue: number) => void
+    onChangeStartValue: (newStartValue: number) => void
+    //error: string
 }
 
 
 function SettingsScreen(props: SettingsScreenType) {
 
     return (
-        <div className={s.setScreen }>
+        <div className={s.setScreen}>
             <SettingsInput
-                           value={props.maxValue}
-                           inputName={'max value:'}
-                           error={props.error}
-                           changeInputValue={props.ChangeMaxValue}
+                startValue={props.startValue}
+                maxValue={props.maxValue}
+                value={props.maxValue}
+                inputName={'max value:'}
+                changeInputValue={props.onChangeMaxValue}
+                //error={props.error}
             />
             <SettingsInput
-
-                           value={props.startValue}
-                           inputName={'start value:'}
-                           error={props.error}
-                           changeInputValue={props.ChangeStartValue}
+                startValue={props.startValue}
+                maxValue={props.maxValue}
+                value={props.startValue}
+                inputName={'start value:'}
+                changeInputValue={props.onChangeStartValue}
+                //error={props.error}
             />
         </div>
     )
