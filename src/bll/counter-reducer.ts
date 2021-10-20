@@ -1,5 +1,4 @@
 
-
 const initialState = {
     startValue: 0,
     maxValue: 5,

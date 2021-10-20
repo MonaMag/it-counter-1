@@ -13,7 +13,7 @@ const rootReducer = combineReducers( {
 
 export type AppStateType = ReturnType<typeof rootReducer>
 
-export const store = createStore(rootReducer, applyMiddleware(ThunkMiddleware))
+export const store = createStore(rootReducer, loadedSettings, applyMiddleware(ThunkMiddleware))
 
 
 // saving counter setting to localStorage =====================>

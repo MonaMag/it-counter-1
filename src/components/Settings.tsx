@@ -8,8 +8,6 @@ type SettingsPropsType = {
     startValue: number
     maxValue: number
     settingsActive: boolean
-    //error: string
-    //validValues: boolean
     onChangeMaxValue: (newMaxValue: number) => void
     onChangeStartValue: (newStartValue: number) => void
     onSetButtonClick: () => void
@@ -17,8 +15,6 @@ type SettingsPropsType = {
 
 function Settings(props: SettingsPropsType) {
 
-    //let disabledSet = !!props.error || !props.validValues
-    /*|| props.startValue >= props.maxValue || props.startValue < 0;*/
     let disabledSet: boolean = !props.settingsActive || props.startValue >= props.maxValue || props.startValue < 0
 
     return (
@@ -27,7 +23,6 @@ function Settings(props: SettingsPropsType) {
                             startValue={props.startValue}
                             onChangeMaxValue={props.onChangeMaxValue}
                             onChangeStartValue={props.onChangeStartValue}
-                            //error={props.error}
             />
             <div className={s.btnWrapper}>
                 <MyButton title={'set'}
@@ -40,4 +35,4 @@ function Settings(props: SettingsPropsType) {
 }
 
 
-export default Settings;
+export  const MemoSettings = React.memo(Settings);

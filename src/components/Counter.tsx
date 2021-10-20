@@ -9,8 +9,6 @@ type CounterPropsType = {
     maxValue: number
     startValue: number
     settingsActive: boolean
-    //validValues: boolean
-    //error: string
     incHandler: () => void
     resetHandler: () => void
 }
@@ -18,8 +16,6 @@ type CounterPropsType = {
 
 function Counter(props: CounterPropsType) {
 
-    //let disabledBtn = !!props.error || props.validValues
-    // let disabledReset = !!props.error
     let disabledBtn = props.settingsActive || props.counterValue === props.maxValue
     return (
         <div className={s.counter}>
@@ -27,8 +23,6 @@ function Counter(props: CounterPropsType) {
                      startValue={props.startValue}
                      maxValue={props.maxValue}
                      settingsUpdating={!props.settingsActive}
-                     //error={props.error}
-                     //validValues={props.validValues}
             />
 
 

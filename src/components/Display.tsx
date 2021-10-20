@@ -7,8 +7,6 @@ type DisplayType = {
     startValue: number
     maxValue: number
     settingsUpdating: boolean
-    //error?: string
-    //validValues: boolean
 }
 
 
